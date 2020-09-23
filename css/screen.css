@@ -2,6 +2,18 @@
 #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: "Inter";
+    font-weight: 400;
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face{
+    font-family: "Inter";
+    font-weight: 600;
+    src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+}
+
 
 
 /*------------------------------------*\
@@ -27,7 +39,7 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Inter, Helvetica, arial, sans-serif;
+    font-family: "Inter", Helvetica, arial, sans-serif;
     color: #20223a;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -173,6 +185,12 @@ a:hover,
 a:focus {
     color: #8ebbff;
 }
+
+label,
+input {
+    display: block;
+}
+
 
 /*------------------------------------*\
 #OBJECTS
@@ -467,6 +485,12 @@ a:focus {
     ---
     Everything form related here
 */
+
+.c-form-field__option{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 /*
     Component: Input
