@@ -488,18 +488,24 @@ input {
 }
 
 .c-card__body{
-    padding: 48px;
+    padding: 0 48px;
 }
 
 .c-card__header{
     display: flex;
-    align-content: center;
-    
     justify-content: center;
+    padding-top: 40px;
 }
 
 .c-card__title{
+    padding-bottom: 8px;
+}
+
+.c-card__footer{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #707070;
 }
 
 /*
@@ -573,15 +579,18 @@ input {
 }
 
 .c-button:hover {
-    background-color: #3075dd;
+    background-color: #4F95FF;
 }
 
 .c-button:focus {
-
+    background-color: #3385FF;
+    box-shadow: h-offset v-offset blur spread color;
+    box-shadow: 0 0 0 3px #3385ff6b; 
+    
 }
 
 .c-button:active {
-    background-color: #196ae4;
+    background-color: #2e78e679;
 }
 
 .c-button--block {
