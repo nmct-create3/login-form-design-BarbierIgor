@@ -23,13 +23,38 @@
     --global-color-alpha: #3385FF;
     --global-color-alpha-dark: #2E77E6;
     --global-color-logo-dark: #1b4186;
-
     --global-color-neutral-xxxx-light: #FFFFFF;
     --global-color-neutral-xxx-light: #f5f6fa;
-    --global-color-neutral-xxxx-dark: #20223a;
+    --global-color-neutral-xx-light: #757787;
+    --global-color-neutral-x-light:  #606274;
+    --global-color-neutral-xxx-dark: #20223a;
+    --global-color-neutral-xxxx-dark: black;
 
     --global-color-transparent: #3385ff59;
     --global-color-x-transparent: #2e78e679;
+
+    --global-color-silver: Silver;
+    
+    --global-color-input-border: #e2e3e7;
+
+
+    --global-baseline: 8px;
+    --global-whitespace: calc(var(--global-baseline) * 3); /* 24px */
+    --global-whitespace-xs: calc(var(--global-baseline) / 2); /* = 4px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2); /* = 16px */
+    --global-whitespace-l: calc(var(--global-baseline) * 3); /* 24px*/
+    --global-whitespace-lg: calc(var(--global-baseling) *4); /* = 32px */   
+    --global-whitespace-xl: calc(var(--global-baseline) * 6); /* = 48px */    
+    
+    --global-line-height-md: calc(var(--global-baseline) * 2); /* = 16px */
+    --global-line-height-l: calc(var(--global-baseline) * 3); /*24px*/
+    --global-line-height-lg: calc(var(--global-baseling) *4); /* = 32px */
+    --global-line-height-xl: calc(var(--global-baseline) * 6); /* = 48px */   
+
+    --global-font-size-14: 14px;
+    --global-font-size-16: 16px;
+
+    --global-border-width: 
 }
 
 /* CSS variables here */
@@ -45,7 +70,7 @@
 */
 
 html {
-  font-size: 16px;
+  font-size: var(--global-font-size-16);
   line-height: 1.5;
   font-family: "Inter", Helvetica, arial, sans-serif;
   color: var(--global-color-neutral-xxx-dark);
@@ -109,28 +134,28 @@ h3 {
 
 h1 {
   font-size: 36px;
-  line-height: 48px;
-  margin: 0 0 24px;
+  line-height: var(--global-line-height-xl);
+  margin: 0 0 var(--global-whitespace-l);
 }
 
 h2 {
   font-size: 32px;
   line-height: 40px;
-  margin: 0 0 24px;
+  margin: 0 0 var(--global-whitespace-l);
 }
 
 h3 {
   font-size: 26px;
-  line-height: 32px;
-  margin: 0 0 24px;
+  line-height: var(--global-line-height-lg);
+  margin: 0 0 var(--global-whitespace-l);
 }
 
 h4,
 h5,
 h6 {
   font-size: 20px;
-  line-height: 24px;
-  margin: 0 0 24px;
+  line-height: var(--global-line-height-l);
+  margin: 0 0 var(--global-whitespace-l);
 }
 
 p,
@@ -140,12 +165,12 @@ dl,
 table,
 address,
 figure {
-  margin: 0 0 24px;
+  margin: 0 0 var(--global-whitespace-l);
 }
 
 ul,
 ol {
-  padding-left: 24px;
+  padding-left: var(--global-whitespace-l);
 }
 
 li ul,
@@ -156,8 +181,8 @@ li ol {
 blockquote {
   font-style: normal;
   font-size: 23px;
-  line-height: 32px;
-  margin: 0 0 24px;
+  line-height: var(--global-line-height-lg);
+  margin: 0 0 var(--global-whitespace-l);
 }
 
 blockquote * {
@@ -168,15 +193,15 @@ blockquote * {
 figcaption {
   font-weight: 400;
   font-size: 12px;
-  line-height: 16px;
-  margin-top: 8px;
+  line-height: var(--global-line-height-md);
+  margin-top: var(--global-baseline);
 }
 
 hr {
   border: 0;
   height: 1px;
   background: LightGrey;
-  margin: 0 0 24px;
+  margin: 0 0 var(--global-whitespace-l);
 }
 
 a {
@@ -214,7 +239,7 @@ input {
 
 .o-row {
   position: relative;
-  padding: 24px 24px 0;
+  padding: var(--global-whitespace-l) var(--global-whitespace-l) 0;
 }
 
 .o-row--body{
@@ -234,19 +259,19 @@ input {
 /* size modifiers */
 
 .o-row--lg {
-  padding-top: 48px;
-  padding-bottom: 24px;
+  padding-top: var(--global-whitespace-xl);
+  padding-bottom: var(--global-whitespace-l);
 }
 
 .o-row--xl {
   padding-top: 72px;
-  padding-bottom: 48px;
+  padding-bottom: var(--global-whitespace-xl);
 }
 
 @media (min-width: 768px) {
   .o-row {
-    padding-left: 48px;
-    padding-right: 48px;
+    padding-left: var(--global-whitespace-xl);
+    padding-right: var(--global-whitespace-xl);
   }
 }
 
@@ -287,7 +312,7 @@ input {
 @media (min-width: 768px) {
   .o-section--lg + .o-section--lg,
   .o-section--xl + .o-section--xl {
-    padding-top: 48px;
+    padding-top: var(--global-whitespace-xl);
   }
 }
 
@@ -472,7 +497,7 @@ input {
     Website main logo
 */
 .c-logo {
-  height: 24px;
+  height: var(--global-whitespace-l);
   display: flex;
   justify-content: center;
 }
@@ -483,7 +508,7 @@ input {
 }
 
 .c-logo__path--1 {
-  fill: var(--global-color-neutral-xxxx-dark);
+  fill: var(--global-color-neutral-xxx-dark);
 }
 
 .c-logo__path--2 {
@@ -506,7 +531,7 @@ input {
 }
 
 .c-card__body {
-  padding: 0 48px;
+  padding: 0 var(--global-whitespace-xl);
 }
 
 .c-card__header {
@@ -523,8 +548,8 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #c0c0c0;
-  padding-top: 24px;
+  border-top: 1px solid var(--global-color-neutral-xx-light);
+  padding-top: var(--global-whitespace-l);
 }
 
 /*
@@ -550,17 +575,17 @@ input {
   -moz-appearance: none;
   appearance: none;
   width: 100%;
-  border-color: #e2e3e7;
+  border-color: var(--global-color-input-border);
   border-radius: 3px;
-  font-size: 16px;
-  line-height: 24px;
-  padding: 16px;
+  font-size: var(--global-font-size-16);
+  line-height: var(--global-whitespace-l);
+  padding: var(--global-whitespace-md);
 }
 
 .c-input:focus {
   border-color: var(--global-color-alpha-light);
   box-shadow: h-offset v-offset blur spread color;
-  box-shadow: 0 0 0 3px #3385ff4d;
+  box-shadow: 0 0 0 3px var(--global-color-x-transparent);
 }
 
 /*
@@ -570,15 +595,15 @@ input {
 */
 
 .c-label {
-  font-size: 14px;
-  line-height: 16px;
-  margin-bottom: 8px;
-  color: #606274;
+  font-size: var(--global-font-size-14);
+  line-height: var(--global-line-height-md);
+  margin-bottom: var(--global-baseline);
+  color: var(--global-color-neutral-x-light);
 }
 
 .c-label--option {
   margin-bottom: 0;
-  margin-left: 8px;
+  margin-left: var(--global-baseline);
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -595,10 +620,10 @@ input {
 .c-button {
   background-color: var(--global-color-alpha-dark);
   color: var(--global-color-neutral-xxxx-light);
-  font-size: 16px;
+  font-size: var(--global-font-size-16);
   line-height: 20px;
   width: 100%;
-  padding: 16px;
+  padding: var(--global-whitespace-md);
   font-weight: 600;
   border-color: var(--global-color-alpha-dark);
   border-radius: 3px;
@@ -634,15 +659,15 @@ input {
 */
 
 .u-color-neutral-base {
-  color: Silver;
+  color: var(--global-color-silver);
 }
 
 .u-color-neutral-dark {
-  color: Black;
+  color: var(--global-color-neutral-xxxx-dark);
 }
 
 .u-color-light-grey{
-    color: #757787;
+    color: var(--global-color-neutral-xx-light);
 }
 
 /*
@@ -725,7 +750,7 @@ input {
 */
 
 .u-text-sm {
-  font-size: 14px;
+  font-size: var(--global-font-size-14);
 }
 
 /*
